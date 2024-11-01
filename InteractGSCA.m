@@ -24,10 +24,14 @@ function [INI, TABLE, ETC] =  InteractGSCA(z0, W0, C0, B0, nnlv_index, ind_sign,
 % Output arguments:                                                       %
 %   INI: Structure array containing goodness-of-fit values, R-squared     % 
 %        values, and matrices parameter estimates                         %
+%     .Converge = Logical value indicating whether the ALS algorithm      %
+%                 converges within the maximum number of iterations       %
+%     .iter = Number of iterations for the ALS algorithm                  %
 %     .W: a J by P matrix of weight estimates                             %
 %     .C: a P by J matrix of loading estimates                            %
 %     .b0: a 1 by P matrix of path coefficient estimates                  %
 %     .B: a (P + P_int) by P matrix of path coefficient estimates         %
+%     .CVscore: an N by P matrix of component scores                      %
 %  TABLE: Structure array containing tables of parameter estimates, their %
 %         SEs, 95% CIs,and other statistics                               %
 %     .W: Table for weight estimates                                      %
@@ -77,12 +81,15 @@ WE = we(nnlv_index, P_p1);
 
 ind_sign_ext=[0,ind_sign+1];
 
-[est_W, est_C, est_B, est_b0]  = als_lint(Z_p1, W0_p1, A0_ext, W_p1, A_ext, V, nnlv_index,ind_sign_ext, WE, J_p1, P_p1, Max_iter, Min_limit);
+[est_W, est_C, est_B, est_b0,it,Converge,Gamma]  = als_lint(Z_p1, W0_p1, A0_ext, W_p1, A_ext, V, nnlv_index,ind_sign_ext, WE, J_p1, P_p1, Max_iter, Min_limit);
 
+INI.Converge=Converge;
+INI.iter = it;
 INI.W=est_W;
 INI.C=est_C;
 INI.B=est_B;
 INI.b0=est_b0;
+INI.CVscore=Gamma;
 
 if N_Boot<100
     TABLE.W=[est_W(W0),NaN(Nw,5)];

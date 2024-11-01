@@ -1,6 +1,6 @@
-function [W, C, B, b0, Gamma] = als_lint(Z, W0, A0, W, A, V, nnlv_index, ind_sign, WE, nvar, nlv, itmax, ceps)
+function [W, C, B, b0, it,Flag_Converge, Gamma] = als_lint(Z, W0, A0, W, A, V, nnlv_index, ind_sign, WE, nvar, nlv, itmax, ceps)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % ALS_Basic() - MATLAB function to implement the ALS algorithm for        %  
+    % ALS_lint() - MATLAB function to implement the ALS algorithm for         %  
     %               Generalized Structured Component Analysis (GSCA) with     % 
     %               component interactions.                                   %
     % Author: Heungsun Hwang & Gyeongcheol Cho                                %
@@ -23,7 +23,7 @@ function [W, C, B, b0, Gamma] = als_lint(Z, W0, A0, W, A, V, nnlv_index, ind_sig
     it = 0;                 
     imp = 100000;         
     f0 = 10^10;            
-    while it <= itmax && imp > ceps 
+    while it < itmax && imp > ceps 
           it = it+1;                    
           for t = 1:ntv  
               H1 = eye(ntv); 
@@ -106,7 +106,8 @@ function [W, C, B, b0, Gamma] = als_lint(Z, W0, A0, W, A, V, nnlv_index, ind_sig
           imp = f0-f;
           f0 = f;
     end
-
+    Flag_Converge=true;
+    if (it== itmax) && (imp > ceps); Flag_Converge=false; end
     for p=1:nlv
        if ind_sign(p)~=0
            if Z(:,ind_sign(p))'*Gamma1(:,p) < 0

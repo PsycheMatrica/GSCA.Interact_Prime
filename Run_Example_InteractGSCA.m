@@ -39,7 +39,8 @@ Max_iter = 100;
 Min_limit = .00001;
 
 [INI, TABLE, ETC] = InteractGSCA(z0, W0, C0, B0, nnlv_index, ind_sign, N_Boot, Max_iter, Min_limit,Flag_Parallel);
-
+INI.Converge
+INI.iter
 INI.W 
 INI.C
 INI.B 
