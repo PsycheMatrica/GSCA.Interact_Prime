@@ -17,8 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Preparation
-load('Example_data.mat')
-z0=Dataset;
+z0=readmatrix('Example_data.csv');
 P = 3;
 P_int = 1;
 P_total = 4;
@@ -32,7 +31,7 @@ nnlv_index=[1,2];
 B0 = zeros(P_total,P);
 B0([1,2,4],3)=99;
 ind_sign=[1,6,11];
-N_Boot = 0;
+N_Boot = 100;
 Flag_Parallel=false;
 
 Max_iter = 100; 
@@ -50,5 +49,3 @@ TABLE.W
 TABLE.C
 TABLE.B
 TABLE.b0
-
-
