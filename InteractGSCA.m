@@ -95,7 +95,7 @@ if N_Boot<100
     TABLE.W=[est_W(W0),NaN(Nw,5)];
     TABLE.C=[est_C(C0),NaN(Nc,5)];
     TABLE.B=[est_B(B0),NaN(Nb,5)];
-    TABLE.b0=[est_b0(b0),NaN(Nb0,5)];
+    TABLE.b0=[est_b0(b0)',NaN(Nb0,5)];
     ETC.W_Boot=[];
     ETC.C_Boot=[];
     ETC.B_Boot=[];  
@@ -133,7 +133,7 @@ else
     TABLE.W=para_stat(est_W(W0),W_Boot,loc_CI);
     TABLE.C=para_stat(est_C(C0),C_Boot,loc_CI);
     TABLE.B=para_stat(est_B(B0),B_Boot,loc_CI); 
-    TABLE.b0=para_stat(est_b0(b0),b0_Boot,loc_CI);
+    TABLE.b0=para_stat(est_b0(b0)',b0_Boot,loc_CI);
 
     ETC.W_Boot=W_Boot;
     ETC.C_Boot=C_Boot;
