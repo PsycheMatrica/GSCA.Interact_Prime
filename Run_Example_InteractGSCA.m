@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Illustration for InteractGSCA Prime package                             %
+% Illustration for GSCA.Interact_Prime package                            %
 %   Author: Heungsun Hwang & Gyeongcheol Cho                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Description:                                                            %
-%   - This code aims to illustrate how to use InteractGSCA Prime package. %
+%   - This code aims to illustrate how to use GSCA.Interact_Prime package.%
 %   - The dataset is generated from the model used in Shen, Cho and Hwang %
 %     (under review).                                                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

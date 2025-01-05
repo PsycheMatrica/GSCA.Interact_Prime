@@ -1,10 +1,10 @@
-# InteractGSCA_Prime
+# GSCA.Interact_Prime
 
 ### Author:
 Heungsun Hwang & Gyeongcheol Cho
 
 ## Description:
-- The **InteractGSCA_Prime** package enables users to estimate and evaluate GSCA models with component interactions.
+- The **GSCA.Interact_Prime** package enables users to estimate and evaluate GSCA models with component interactions.
 
 ## Features:
 - Estimate model parameters and calculate their standard errors (SE) along with 95% confidence intervals (CI).
@@ -15,11 +15,11 @@ Heungsun Hwang & Gyeongcheol Cho
 To use this package in MATLAB:
 1. Clone or download the repository:
    ```bash
-   git clone https://github.com/GyeongcheolCho/InteractGSCA_Prime.git
+   git clone https://github.com/PsycheMatrica/GSCA.Interact_Prime.git
    ```
 2. Add the package to your MATLAB path:
    ```matlab
-    addpath(genpath('InteractGSCA_Prime'))
+    addpath(genpath('GSCA.Interact_Prime'))
    ```
 
 ## Usage:
@@ -30,8 +30,8 @@ To use this package in MATLAB:
 - Likely compatible with earlier MATLAB versions.
 
 ### Citation (APA):
-- If you use **InteractGSCA_Prime** in your research or publications, please cite it in APA format as follows:
+- If you use **GSCA.Interact_Prime** in your research or publications, please cite it in APA format as follows:
 
 ```plaintext
-Hwang, H. & Cho, G. (2024). InteractGSCA_Prime: A package for generalized structured component analysis with component interactions [Computer software]. GitHub. https://github.com/GyeongcheolCho/InteractGSCA_Prime
+Hwang, H. & Cho, G. (2024). GSCA.Interact_Prime: A package for generalized structured component analysis with component interactions [Computer software]. GitHub. https://github.com/PsycheMatrica/GSCA.Interact_Prime
 ```
