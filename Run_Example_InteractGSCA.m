@@ -1,19 +1,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Illustration for GSCA.Interact_Prime package                            %
-%   Author: Heungsun Hwang & Gyeongcheol Cho                              %
+%   Author: Gyeongcheol Cho & Heungsun Hwang                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Description:                                                            %
 %   - This code aims to illustrate how to use GSCA.Interact_Prime package.%
 %   - The dataset is generated from the model used in Shen, Cho and Hwang %
-%     (under review).                                                     %
+%     (2025).                                                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % References                                                              %
 %     * Hwang, H., Ho, M.-H. R., & Lee, J. (2010). Generalized structured %
 %         component analysis with latent interactions. Psychometrika,     %
 %         75(2), 228–242. https://doi.org/10.1007/s11336-010-9157-5       %
-%     * Shen, Z., Cho, G., & Hwang, H. (under review)  Comparison of      %
-%         component-based structural equation modeling methods in testing %
-%         component interaction effects.                                  %
+%     * Shen, Z., Cho, G., & Hwang, H. (2025). Comparison of              %
+%           Component-Based Structural Equation Modeling Methods in       %
+%           Testing Component Interaction Effects. Structural Equation    %
+%           Modeling: A Multidisciplinary Journal, 1–13.                  %
+%           https://doi.org/10.1080/10705511.2025.2497088                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Preparation
@@ -37,7 +39,11 @@ Flag_Parallel=false;
 Max_iter = 100; 
 Min_limit = .00001;
 
-[INI, TABLE, ETC] = InteractGSCA(z0, W0, C0, B0, nnlv_index, ind_sign, N_Boot, Max_iter, Min_limit,Flag_Parallel);
+Results = InteractGSCA(z0, W0, C0, B0, nnlv_index, ind_sign, N_Boot, Max_iter, Min_limit,Flag_Parallel);
+INI=Results.INI;
+TABLE=Results.TABLE;
+ETC=Results.ETC;
+
 INI.Converge
 INI.iter
 INI.W 
